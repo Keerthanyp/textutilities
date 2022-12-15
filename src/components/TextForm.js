@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
-  const [text, setText] = useState("Enter text here");
+  const [text, setText] = useState("Enter text here ");
   //text variable is updated using setText function using Hooks, i.e. useState
   // text ="new Text"; wrong way to update any variable
 
@@ -21,6 +21,11 @@ export default function TextForm(props) {
     // console.log("lowercase was clicked "+text);
     let lowText = text.toLowerCase();
     setText(lowText);
+  };
+
+  const handleRepClick = () => {
+    let repText = text.repeat(2);
+    setText(repText);
   };
 
   const handleClearClick = () => {
@@ -48,6 +53,9 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary mx-1" onClick={handleLowClick}>
           Convert To Lowercase
+        </button>
+        <button className="btn btn-primary mx-1" onClick={handleRepClick}>
+          Repeat Text
         </button>
         <button className="btn btn-primary mx-1" onClick={handleClearClick}>
           Clear Text
