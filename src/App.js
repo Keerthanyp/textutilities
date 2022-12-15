@@ -1,6 +1,7 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import TextForm from "./components/TextForm";
 
 function App() {
   return (
@@ -21,7 +22,14 @@ function App() {
     //   </header>
     // </div>
     <>
-      <Navbar title="TextUtils" aboutText="About textUtils" disabled="Text Disabled"/>
+      <Navbar
+        title="TextUtils"
+        aboutText="About textUtils"
+        disabled="Text Disabled"
+      />
+      <div className="container">
+        <TextForm heading="Enter Your Text" />
+      </div>
     </>
   );
 }

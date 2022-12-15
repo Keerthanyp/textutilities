@@ -89,9 +89,9 @@ export default function Navbar(props) {
 // to specify the type of props: if the props are sent of different types then it'll throw an error in console
 Navbar.propTypes = {
   title: PropTypes.string.isRequired,
-//   isRequired if the values is needed
   aboutText: PropTypes.string.isRequired,
   disabled: PropTypes.string,
+  //   isRequired if the values is needed
 };
 
 //default type and values will be displayed for props if its not specified:
