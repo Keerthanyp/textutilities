@@ -21,7 +21,7 @@ function App() {
     //   </header>
     // </div>
     <>
-      <Navbar title="TextUtils" />
+      <Navbar title="TextUtils" aboutText="About textUtils" disabled="Text Disabled"/>
     </>
   );
 }
