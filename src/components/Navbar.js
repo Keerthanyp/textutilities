@@ -65,7 +65,9 @@ export default function Navbar(props) {
             </ul>
           </li> */}
               <li className="nav-item">
-                <a className="nav-link disabled">{props.disabled}</a>
+                <a className="nav-link disabled" href="/">
+                  {props.disabled}
+                </a>
               </li>
             </ul>
             <form className="d-flex" role="search">
@@ -88,10 +90,10 @@ export default function Navbar(props) {
 
 // to specify the type of props: if the props are sent of different types then it'll throw an error in console
 Navbar.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   aboutText: PropTypes.string.isRequired,
   disabled: PropTypes.string,
-  //   isRequired if the values are needed to be passed as props
+  //   isRequired is specified if the values are needed to be passed as props
 };
 
 //default type and values will be displayed for props if its not specified:

@@ -23,9 +23,24 @@ export default function TextForm(props) {
     setText(lowText);
   };
 
+  //repeat the text
   const handleRepClick = () => {
     let repText = text.repeat(2);
     setText(repText);
+  };
+
+  //remove extra spaces
+  const handleExtraSpaces = () => {
+    let txt = text.split(/[ ]+/);
+    setText(txt.join(" "));
+  };
+
+  //copy the text entered
+  const handleCopyText = () => {
+    var text = document.getElementById("myBox");
+    text.select();
+    text.setSelectionRange(0, 9999);
+    navigator.clipboard.writeText(text.value);
   };
 
   const handleClearClick = () => {
@@ -56,6 +71,12 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary mx-1" onClick={handleRepClick}>
           Repeat Text
+        </button>
+        <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>
+          Extra Spaces
+        </button>
+        <button className="btn btn-primary mx-1" onClick={handleCopyText}>
+          Copy Text
         </button>
         <button className="btn btn-primary mx-1" onClick={handleClearClick}>
           Clear Text
