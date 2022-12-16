@@ -4,6 +4,7 @@ export default function TextForm(props) {
   const [text, setText] = useState("Enter text here ");
   //text variable is updated using setText function using Hooks, i.e. useState
   // text ="new Text"; wrong way to update any variable
+  //setText("new text"); correct way to change the state
 
   const handleUpClick = () => {
     // console.log("upper case was clicked" +text);
@@ -49,18 +50,21 @@ export default function TextForm(props) {
   };
   return (
     <>
-      <div>
+      {/* using style inside div with 2{{  }}, 1 for js and another for object */}
+      <div className="container"  style={{
+              color: props.mode === "dark" ? "white" : "black",              
+            }}>
+        <h2>{props.heading}</h2>
         <div className="mb-3">
-          <label htmlFor="myBox" className="form-label">
-            <h2>{props.heading}</h2>
-          </label>
-
           <textarea
             className="form-control"
-            placeholder="Leave a comment here"
             id="myBox"
             value={text}
             onChange={handleOnChange}
+            style={{
+              color: props.mode === "dark" ? "white" : "black",
+              backgroundColor: props.mode === "dark" ? "grey" : "white",
+            }}
           ></textarea>
         </div>
         <button className="btn btn-primary mx-1" onClick={handleUpClick}>
@@ -73,7 +77,7 @@ export default function TextForm(props) {
           Repeat Text
         </button>
         <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>
-          Extra Spaces
+          Remove Extra Spaces
         </button>
         <button className="btn btn-primary mx-1" onClick={handleCopyText}>
           Copy Text
@@ -82,7 +86,12 @@ export default function TextForm(props) {
           Clear Text
         </button>
       </div>
-      <div className="container my-3">
+      <div
+        className="container my-3"
+        style={{
+          color: props.mode === "dark" ? "white" : "black",
+        }}
+      >
         <h3>Your text summary</h3>
         <p>
           Words= {text.split(" ").length} and Text length= {text.length}{" "}
@@ -91,7 +100,11 @@ export default function TextForm(props) {
         <p>{0.008 * text.split(" ").length} minutes to read the text summary</p>
         <br></br>
         <h3>Preview </h3>
-        <h5>{text}</h5>
+        <h5>
+          {text.length > 0
+            ? text
+            : "Enter something in the text box above to preview it here"}
+        </h5>
       </div>
     </>
   );

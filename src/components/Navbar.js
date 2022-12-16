@@ -4,7 +4,9 @@ import PropTypes from "prop-types";
 export default function Navbar(props) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav
+        className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}
+      >
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             TextUtilities
@@ -70,6 +72,25 @@ export default function Navbar(props) {
                 </a>
               </li>
             </ul>
+            <div
+              className={`form-check form-switch text-${
+                props.mode === "light" ? "dark" : "light"
+              }`}
+            >
+              <input
+                className="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckDefault"
+                onClick={props.toggleMode}
+              />
+              <label
+                className="form-check-label"
+                htmlFor="flexSwitchCheckDefault"
+              >
+                Enable Dark Mode
+              </label>
+            </div>
             <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
@@ -90,10 +111,11 @@ export default function Navbar(props) {
 
 // to specify the type of props: if the props are sent of different types then it'll throw an error in console
 Navbar.propTypes = {
-  title: PropTypes.string.isRequired,
-  aboutText: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  aboutText: PropTypes.string,
   disabled: PropTypes.string,
-  //   isRequired is specified if the values are needed to be passed as props
+  // aboutText: PropTypes.string.isRequired,
+  // isRequired is specified if the values are needed to be passed as props
 };
 
 //default type and values will be displayed for props if its not specified:
