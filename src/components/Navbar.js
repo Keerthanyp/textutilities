@@ -29,19 +29,19 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                {/* <a className="nav-link active" aria-current="page" href="#">
                   {props.title}
-                  props should be place inside {} in jsx
-                </a>
+                  //  props should be place inside {} in jsx 
+                </a> */}
                 {/* <Link className="nav-link active" aria-current="page" to="/">
                   {props.title}
                   //  props should be place inside {} in jsx       
                     </Link>  */}
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                {/* <a className="nav-link" href="#">
                   {props.aboutText}
-                </a>
+                </a> */}
                 {/* <Link className="nav-link" to="/about">
                   {props.aboutText}
                 </Link> */}
@@ -78,9 +78,9 @@ export default function Navbar(props) {
             </ul>
           </li> */}
               <li className="nav-item">
-                <a className="nav-link disabled" href="#">
+                {/* <a className="nav-link disabled" href="#">
                   {props.disabled}
-                </a>
+                </a> */}
                 {/* <Link className="nav-link disabled" to="/">
                   {props.disabled}
                 </Link> */}
@@ -105,7 +105,7 @@ export default function Navbar(props) {
                 Enable Dark Mode
               </label>
             </div>
-            <form className="d-flex" role="search">
+            {/* <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
                 type="search"
@@ -115,7 +115,7 @@ export default function Navbar(props) {
               <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
-            </form>
+            </form> */}
           </div>
         </div>
       </nav>
