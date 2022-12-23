@@ -12,7 +12,7 @@ export default function Navbar(props) {
           {/* <Link className="navbar-brand" to="/">
             TextUtilities
           </Link> */}
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/textutils">
             TextUtilities
           </a>
           <button
