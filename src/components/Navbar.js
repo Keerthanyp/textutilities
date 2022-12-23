@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -9,9 +9,12 @@ export default function Navbar(props) {
         className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}
       >
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          {/* <Link className="navbar-brand" to="/">
             TextUtilities
-          </Link>
+          </Link> */}
+          <a className="navbar-brand" href="#">
+            TextUtilities
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -26,22 +29,22 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                {/* <a className="nav-link active" aria-current="page" href="/">
+                <a className="nav-link active" aria-current="page" href="#">
                   {props.title}
-                  props should be place inside {} in jsx 
-                </a> */}
-                <Link className="nav-link active" aria-current="page" to="/">
+                  props should be place inside {} in jsx
+                </a>
+                {/* <Link className="nav-link active" aria-current="page" to="/">
                   {props.title}
-                  {/* props should be place inside {} in jsx */}
-                </Link>
+                  //  props should be place inside {} in jsx       
+                    </Link>  */}
               </li>
               <li className="nav-item">
-                {/* <a className="nav-link" href="/">
+                <a className="nav-link" href="#">
                   {props.aboutText}
-                </a> */}
-                <Link className="nav-link" to="/about">
+                </a>
+                {/* <Link className="nav-link" to="/about">
                   {props.aboutText}
-                </Link>
+                </Link> */}
               </li>
               {/* <li className="nav-item dropdown">
             <a
@@ -75,9 +78,12 @@ export default function Navbar(props) {
             </ul>
           </li> */}
               <li className="nav-item">
-                <Link className="nav-link disabled" href="/">
+                <a className="nav-link disabled" href="#">
                   {props.disabled}
-                </Link>
+                </a>
+                {/* <Link className="nav-link disabled" to="/">
+                  {props.disabled}
+                </Link> */}
               </li>
             </ul>
             <div

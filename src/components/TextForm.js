@@ -37,7 +37,7 @@ export default function TextForm(props) {
   const handleExtraSpaces = () => {
     let txt = text.split(/[ ]+/);
     setText(txt.join(" "));
-    props.showAlert("Extraspaces removed!", "success");
+    props.showAlert("Extra spaces was removed!", "success");
   };
 
   //copy the text entered
@@ -46,7 +46,7 @@ export default function TextForm(props) {
     text.select();
     text.setSelectionRange(0, 9999);
     navigator.clipboard.writeText(text.value);
-    props.showAlert("Copied text!", "success");
+    props.showAlert("Text was Copied!", "success");
   };
 
   const handleClearClick = () => {
