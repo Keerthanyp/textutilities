@@ -10,6 +10,7 @@ export default function TextForm(props) {
     // console.log("upper case was clicked" +text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to Uppercase!", "success");
   };
 
   //if event is used then it should be placed as parameter
@@ -22,18 +23,21 @@ export default function TextForm(props) {
     // console.log("lowercase was clicked "+text);
     let lowText = text.toLowerCase();
     setText(lowText);
+    props.showAlert("Converted to Lowercase!", "success");
   };
 
   //repeat the text
   const handleRepClick = () => {
     let repText = text.repeat(2);
     setText(repText);
+    props.showAlert("Text was repeated!", "success");
   };
 
   //remove extra spaces
   const handleExtraSpaces = () => {
     let txt = text.split(/[ ]+/);
     setText(txt.join(" "));
+    props.showAlert("Extraspaces removed!", "success");
   };
 
   //copy the text entered
@@ -42,18 +46,23 @@ export default function TextForm(props) {
     text.select();
     text.setSelectionRange(0, 9999);
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied text!", "success");
   };
 
   const handleClearClick = () => {
     // console.log("clear text was clicked");
     setText("");
+    props.showAlert("Text was cleared!", "danger");
   };
   return (
     <>
       {/* using style inside div with 2{{  }}, 1 for js and another for object */}
-      <div className="container"  style={{
-              color: props.mode === "dark" ? "white" : "black",              
-            }}>
+      <div
+        className="container"
+        style={{
+          color: props.mode === "dark" ? "white" : "black",
+        }}
+      >
         <h2>{props.heading}</h2>
         <div className="mb-3">
           <textarea
@@ -94,7 +103,7 @@ export default function TextForm(props) {
       >
         <h3>Your text summary</h3>
         <p>
-          Words= {text.split(" ").length} and Text length= {text.length}{" "}
+          Words= {text.split(" ").length - 1} and Text length= {text.length}{" "}
           characters
         </p>
         <p>{0.008 * text.split(" ").length} minutes to read the text summary</p>
